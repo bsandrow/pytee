@@ -1,6 +1,10 @@
 pytee
 =====
 
+An implemenation of Unix's tee utility for use in Python programs. This makes
+it really easy to write to a single object, but have the those changes
+replicated into multiple writes to various files (or file-like objects).
+
     import pytee
 
     tee = pytee.create_tee([ '/tmp/tee-test-1', '/tmp/tee-test-2' ], mode='a')
@@ -24,7 +28,7 @@ subprocess.Popen() where a fileno is required.
 
 Roadmap
 =======
-
+           i t
  * Create a Tee object that implements all of the file-like object trappings.
    (Keep around the `create_tee()` function for seamless compatibility).
 
