@@ -24,11 +24,11 @@ The purpose of **create_tee()** is to allow the unix 'tee' utility to be easily
 emulated within Python. If spawns a child process that listens for data on a
 pipe, and wraps the write end of that pipe in a file object. This allows it to
 be used seamlessly where ever file ojects are used, even in places likes
-subprocess.Popen() where a fileno is required.
+[subprocess.Popen()][1] where a fileno is required.
 
 Roadmap
 =======
-           i t
+
  * Create a Tee object that implements all of the file-like object trappings.
    (Keep around the `create_tee()` function for seamless compatibility).
 
@@ -44,3 +44,5 @@ License
 =======
 
 BSD 3-clause license. See LICENSE file for terms.
+
+[1]: http://docs.python.org/library/subprocess.html#subprocess.Popen
