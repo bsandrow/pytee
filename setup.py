@@ -11,7 +11,7 @@ config = {
     'url'               : 'http://github.com/bsandrow/pytee',
     'author_email'      : 'brandon@sandrowicz.org',
     'version'           : 0.1,
-    'packages'          : ['pytee'],
+    'py_modules'        : ['pytee'],
     'name'              : 'pytee',
 }
 
