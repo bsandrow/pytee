@@ -26,6 +26,7 @@ Sample Usage:
             print "File '%s' has %d chars" % (filename, chars)
 """
 
+from __future__ import print_function
 
 import sys
 import os
@@ -93,17 +94,17 @@ if __name__ == '__main__':
     files     = [ '/tmp/tee-test-1', '/tmp/tee-test-2' ]
     num_chars = 100000
 
-    print "Writing %d chars to files (using create_tee):" % num_chars
+    print("Writing %d chars to files (using create_tee):" % num_chars)
     for file in files:
-        print "  %s" % file
-    print
+        print("  %s" % file)
+    print()
 
     tee = create_tee(files,mode='a')
-    print >>tee, "a" * num_chars,
+    print("a" * num_chars, file=tee)
     tee.close()
     os.wait()
 
     for filename in files:
         with open(filename, 'r') as fh:
             chars = len(fh.read())
-            print "File '%s' has %d chars" % (filename, chars)
+            print("File '%s' has %d chars" % (filename, chars))
